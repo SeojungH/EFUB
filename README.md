@@ -1,12 +1,13 @@
 # EFUB 4주차 세미나 과제
 
-###### {파트명} {본인 이름}
+###### {백인턴} {황서정}
 
 
 
 ### 01. 학사 정보 관리 ERD
 
-[링크]
+
+
 ![Untitled Diagram drawio](https://user-images.githubusercontent.com/86144019/162711174-58b629a7-612f-4333-a964-749a25312ad0.png)
 
 
