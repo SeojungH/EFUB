@@ -18,19 +18,54 @@ https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&n
 ##### SWS 테이블 생성 코드
 
 ```
+create database efub;
+use efub;
 
+create table SWS (
+sws_id BIGINT NOT NULL auto_increment,
+teamname varchar(45) NOT NULL,
+PRIMARY KEY(sws_id)
+);
+
+insert into SWS(teamname) values
+("베이커리"),
+("라꾸라꾸"),
+("STEADY"),
+("梨상청");
 ```
 
+##### member 테이블 생성 코드
 
+```
+create table member(
+member_id BIGINT NOT NULL auto_increment,
+name varchar(45) NOT NULL,
+position varchar(45) NOT NULL,
+email varchar(200) NULL,
+birth_date DATE NULL,
+sws_id BIGINT NOT NULL ,
+PRIMARY KEY(member_id),
+FOREIGN KEY(sws_id) REFERENCES SWS(sws_id)
+);
+
+insert into member(name, position, email, birth_date, sws_id) values
+("윤효정", "back", "efub@gmail.com", "1998-03-23", 3),
+("김시연", "back", "siyeon@gmail.com", "1999-07-26", 1),
+("이해린", "front", "ocean@naver.com", "2000-04-22", 4),
+("황서정", "back", "hseojung@gmail.com", "2001-04-27", 4);
+
+```
 
 ##### JOIN 코드
 
 ```
-JOIN 코드
+select name, position, email, birth_date from member LEFT JOIN SWS ON SWS.sws_id  = member.sws_id
+union
+select name, position, email, birth_date from member RIGHT JOIN SWS ON SWS.sws_id  = member.sws_id;
 ```
 
 
 
 ##### JOIN 출력 결과
 
-[JOIN 출력 결과]
+![image](https://user-images.githubusercontent.com/86144019/162731872-1203d02c-6946-42e8-abaf-7814ec5e19f1.png)
