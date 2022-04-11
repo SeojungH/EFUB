@@ -18,7 +18,7 @@ https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&n
 ##### SWS 테이블 생성 코드
 
 ```
-SWS 테이블 생성 코드
+
 ```
 
 
